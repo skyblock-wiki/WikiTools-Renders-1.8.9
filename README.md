@@ -1,6 +1,6 @@
 # WikiTools Renders 1.8.9
 
-WikiTools Renders is a Minecraft mod that performs rendering tasks. The supported platform is _Minecraft 1.8.9_ with _Forge_.
+WikiTools Renders is a Minecraft mod that performs rendering tasks to support the workflow of wikis of Minecraft servers. The supported platform is _Minecraft 1.8.9_ with _Forge_.
 
 ## Features
 
@@ -11,7 +11,7 @@ WikiTools Renders is a Minecraft mod that performs rendering tasks. The supporte
 - Add Item To Entity
   - **Key**: (Same as Copy Entity)
   - **Description**: When used on a hovered-over item in the inventory or a container screen, copies the item to the current entity in the Render Entity GUI.
-  - **Available Behaviours**:
+  - **Available Behaviors**:
     - Default: Copies as held item of the current entity.
     - Shift+Key: Copies as an armor piece of the current entity. In addition to standard armor pieces, blocks can be copied as a helmet piece.
 
@@ -28,5 +28,5 @@ WikiTools Renders is a Minecraft mod that performs rendering tasks. The supporte
 
 ## Other Pages
 
-[Changelog](CHANGELOG.md)
-[Developing](docs/developing.md)
+- [Changelog](CHANGELOG.md)
+- [Developing](docs/developing.md)

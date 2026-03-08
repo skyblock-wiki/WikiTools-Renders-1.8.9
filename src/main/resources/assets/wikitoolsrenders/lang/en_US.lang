@@ -1,6 +1,6 @@
 wikitoolsrenders.keybind.category=WikiTools Renders
 wikitoolsrenders.keybind.copyEntity=Copy Entity
-wikitoolsrenders.keybind.hud=Open GUI
+wikitoolsrenders.keybind.hud=Open Render Entity GUI
 
 wikitoolsrenders.remindModUpdate.needsUpdating=WikiTools Renders has an update: %s.
 wikitoolsrenders.remindModUpdate.updateLinkText=Click here to see the new version.

@@ -45,8 +45,6 @@ minecraft {
     mappings = "stable_22"
 
     replace('${GRADLE_MOD_ID}', mod_id)
-    replace('${GRADLE_MOD_NAME}', mod_name)
-    replace('${GRADLE_MOD_DESCRIPTION}', mod_description)
     replace('${GRADLE_MOD_VERSION}', mod_version)
 
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
@@ -110,9 +108,7 @@ processResources {
     // This will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
-    inputs.property "name", mod_name
     inputs.property "modid", mod_id
-    inputs.property "description", mod_description
 
     // Replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
@@ -122,9 +118,7 @@ processResources {
         expand (
                 'version': project.version,
                 'mcversion': project.minecraft.version,
-                'name': mod_name,
                 'modid': mod_id,
-                'description': mod_description
         )
     }
 

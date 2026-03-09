@@ -52,6 +52,7 @@ minecraft {
 
 repositories {
     mavenCentral()
+    maven { url = "https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1" }
 }
 
 configurations {
@@ -88,13 +89,16 @@ dependencies {
     // it is usually necessary for this library to be present at runtime to avoid ClassDefNotFoundErrors
     // Use shade to take the contents files of a library, put them in your own jar, and change their package
     // For more info: https://github.com/MinecraftForge/ForgeGradle/blob/FG_1.2/docs/user-guide/shading.md
-    shade "com.github.zafarkhaja:java-semver:0.10.2"
+    shade("com.github.zafarkhaja:java-semver:0.10.2")
+    // For authenticating Minecraft accounts in development environments
+    shade("me.djtheredstoner:DevAuth-forge-legacy:1.2.2")
 
-    compileOnly 'org.jetbrains:annotations:26.0.2'
+    compileOnly("org.jetbrains:annotations:26.0.2")
 
-    testImplementation('org.junit.jupiter:junit-jupiter:5.13.4')
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.13.4")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.13.4")
+    // Test dependencies
+    testImplementation("org.junit.jupiter:junit-jupiter:5.14.3")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.14.3")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.14.3")
 }
 
 test {

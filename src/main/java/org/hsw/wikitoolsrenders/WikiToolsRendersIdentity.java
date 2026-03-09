@@ -14,6 +14,8 @@ public class WikiToolsRendersIdentity {
     public static final String LATEST_RELEASE_DOWNLOAD_URL =
             "https://github.com/skyblock-wiki/wikitools-renders-1.8.9/releases/latest";
 
+    public static final String CATEGORY = "wikitoolsrenders.keybind.category";
+
     public static final Logger LOGGER = LogManager.getLogger(MODID);
 
 }

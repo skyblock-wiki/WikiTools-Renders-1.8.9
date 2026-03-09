@@ -6,18 +6,16 @@ import org.lwjgl.input.Keyboard;
 
 public class WikiToolsRendersKeybinds {
 
-    private static String category = "wikitoolsrenders.keybind.category";
-
     public static KeyBinding COPY_ENTITY = new KeyBinding(
             "wikitoolsrenders.keybind.copyEntity",
             Keyboard.KEY_M,
-            category
+            WikiToolsRendersIdentity.CATEGORY
     );
 
     public static KeyBinding HUD = new KeyBinding(
             "wikitoolsrenders.keybind.hud",
             Keyboard.KEY_K,
-            category
+            WikiToolsRendersIdentity.CATEGORY
     );
 
     public static void init() {

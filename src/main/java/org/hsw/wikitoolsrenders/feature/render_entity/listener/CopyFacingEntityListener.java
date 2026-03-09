@@ -1,5 +1,6 @@
 package org.hsw.wikitoolsrenders.feature.render_entity.listener;
 
+import net.minecraftforge.common.MinecraftForge;
 import org.hsw.wikitoolsrenders.WikiToolsRendersKeybinds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityOtherPlayerMP;
@@ -18,6 +19,14 @@ import org.hsw.wikitoolsrenders.feature.render_entity.render.EntityRenderer;
 import java.util.Optional;
 
 public class CopyFacingEntityListener {
+
+    public CopyFacingEntityListener() {
+        registerEvent();
+    }
+
+    private void registerEvent() {
+        MinecraftForge.EVENT_BUS.register(this);
+    }
 
     @SubscribeEvent
     public void onKeyInputEvent(InputEvent.KeyInputEvent event) {

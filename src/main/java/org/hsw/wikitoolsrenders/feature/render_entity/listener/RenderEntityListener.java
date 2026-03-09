@@ -1,5 +1,6 @@
 package org.hsw.wikitoolsrenders.feature.render_entity.listener;
 
+import net.minecraftforge.common.MinecraftForge;
 import org.hsw.wikitoolsrenders.WikiToolsRendersKeybinds;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.RenderPlayerEvent;
@@ -12,6 +13,14 @@ import org.hsw.wikitoolsrenders.feature.render_entity.screen.RenderEntityScreen;
 public class RenderEntityListener {
 
     private static boolean toOpenGui = false;
+
+    public RenderEntityListener() {
+        registerEvent();
+    }
+
+    private void registerEvent() {
+        MinecraftForge.EVENT_BUS.register(this);
+    }
 
     @SubscribeEvent
     public void onKeyInputEvent(InputEvent.KeyInputEvent event) {

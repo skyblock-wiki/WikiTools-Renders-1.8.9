@@ -11,6 +11,7 @@ import net.minecraft.util.ChatStyle;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IChatComponent;
 import net.minecraftforge.client.event.GuiScreenEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.hsw.wikitoolsrenders.WikiToolsRendersKeybinds;
 import org.hsw.wikitoolsrenders.feature.render_entity.render.EntityRenderer;
@@ -19,6 +20,14 @@ import org.lwjgl.input.Keyboard;
 import java.util.Optional;
 
 public class AddItemToEntityListener {
+
+    public AddItemToEntityListener() {
+        registerEvent();
+    }
+
+    private void registerEvent() {
+        MinecraftForge.EVENT_BUS.register(this);
+    }
 
     @SubscribeEvent
     public void copyEntityHandler(GuiScreenEvent.KeyboardInputEvent.Pre event) {

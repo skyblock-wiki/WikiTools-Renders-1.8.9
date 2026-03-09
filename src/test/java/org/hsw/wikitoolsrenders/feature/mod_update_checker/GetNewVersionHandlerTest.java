@@ -1,7 +1,5 @@
-package org.hsw.wikitoolsrenders.features.remind_mod_update;
+package org.hsw.wikitoolsrenders.feature.mod_update_checker;
 
-import org.hsw.wikitoolsrenders.feature.remind_mod_update.FindModVersion;
-import org.hsw.wikitoolsrenders.feature.remind_mod_update.GetNewVersionHandler;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -9,6 +7,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Optional;
+import java.util.concurrent.Future;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,7 +18,9 @@ class GetNewVersionHandlerTest {
                 FindModVersion.FindModVersionResult.success(latestVersion)
         );
         GetNewVersionHandler getNewVersionHandler = new GetNewVersionHandler(latestReleaseFinderStub);
-        return getNewVersionHandler.getNewVersion(new GetNewVersionHandler.GetNewVersionRequest(currentVersion));
+        Future<GetNewVersionHandler.GetNewVersionResponse> result =
+                getNewVersionHandler.getNewVersion(new GetNewVersionHandler.GetNewVersionRequest(currentVersion));
+        return assertDoesNotThrow(() -> result.get());
     }
 
     @Nested
@@ -45,7 +46,9 @@ class GetNewVersionHandlerTest {
                     FindModVersion.FindModVersionResult.failure("Latest Release Fetch/Parse Failure (HTTP/1.1 404 Not Found)")
             );
             GetNewVersionHandler getNewVersionHandler = new GetNewVersionHandler(latestReleaseFinderStub);
-            GetNewVersionHandler.GetNewVersionResponse response = getNewVersionHandler.getNewVersion(new GetNewVersionHandler.GetNewVersionRequest("1.0.0"));
+            Future<GetNewVersionHandler.GetNewVersionResponse> result =
+                    getNewVersionHandler.getNewVersion(new GetNewVersionHandler.GetNewVersionRequest("1.0.0"));
+            GetNewVersionHandler.GetNewVersionResponse response = assertDoesNotThrow(() -> result.get());
             assertFalse(response.success);
             assertEquals(response.message, Optional.of("Latest Release Fetch/Parse Failure (HTTP/1.1 404 Not Found)"));
         }
@@ -66,19 +69,6 @@ class GetNewVersionHandlerTest {
             assertTrue(response.success);
             assertTrue(response.result.isPresent());
             assertEquals(response.result.get().latestVersion, versionName);
-        }
-
-        @ParameterizedTest
-        @CsvSource({
-                "v1.9.0, 1.9.0",
-                "v1.0.0-alpha, 1.0.0-alpha",
-                "v1.0.0-alpha+001, 1.0.0-alpha+001",
-        })
-        void whenIsValidSemverWithPrefixV(String versionName, String actualVersion) {
-            GetNewVersionHandler.GetNewVersionResponse response = getNewVersion(versionName, versionName);
-            assertTrue(response.success);
-            assertTrue(response.result.isPresent());
-            assertEquals(response.result.get().latestVersion, actualVersion);
         }
 
     }

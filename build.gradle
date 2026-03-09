@@ -99,6 +99,9 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.14.3")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.14.3")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.14.3")
+
+    testImplementation("org.mock-server:mockserver-netty-no-dependencies:5.15.0")
+    testImplementation("org.mock-server:mockserver-client-java-no-dependencies:5.15.0")
 }
 
 test {

@@ -1,6 +1,6 @@
-package org.hsw.wikitoolsrenders.features.remind_mod_update;
+package org.hsw.wikitoolsrenders.feature.mod_update_checker;
 
-import org.hsw.wikitoolsrenders.feature.remind_mod_update.FindModVersion;
+import org.hsw.wikitoolsrenders.feature.mod_update_checker.FindModVersion;
 
 public class LatestReleaseFinderStub implements FindModVersion {
     private final FindModVersionResult result;

@@ -1,8 +1,9 @@
-package org.hsw.wikitoolsrenders.feature.remind_mod_update;
+package org.hsw.wikitoolsrenders.feature.mod_update_checker;
 
 import com.github.zafarkhaja.semver.Version;
 
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 public class GetNewVersionHandler {
 
@@ -12,31 +13,33 @@ public class GetNewVersionHandler {
         this.findModVersion = findModVersion;
     }
 
-    public GetNewVersionResponse getNewVersion(GetNewVersionRequest request) {
-        String currentVersionName = request.currentVersion;
-        Optional<Version> currentVersion = getVersion(currentVersionName);
-        if (!currentVersion.isPresent()) {
-            return GetNewVersionResponse.failure("Version Parse Failure (" + currentVersionName + ")");
-        }
+    public CompletableFuture<GetNewVersionResponse> getNewVersion(GetNewVersionRequest request) {
+        return CompletableFuture.supplyAsync(() -> {
+            String currentVersionName = request.currentVersion;
+            Optional<Version> currentVersion = getVersion(currentVersionName);
+            if (!currentVersion.isPresent()) {
+                return GetNewVersionResponse.failure("Version Parse Failure (" + currentVersionName + ")");
+            }
 
-        FindModVersion.FindModVersionResult latestVersionResult = findModVersion.findLatestVersion();
-        if (!latestVersionResult.success || !latestVersionResult.version.isPresent()) {
-            return GetNewVersionResponse.failure(latestVersionResult.message.orElse("Unknown Error"));
-        }
+            FindModVersion.FindModVersionResult latestVersionResult = findModVersion.findLatestVersion();
+            if (!latestVersionResult.success || !latestVersionResult.version.isPresent()) {
+                return GetNewVersionResponse.failure(latestVersionResult.message.orElse("Unknown Error"));
+            }
 
-        String latestVersionName = latestVersionResult.version.get();
+            String latestVersionName = latestVersionResult.version.get();
 
-        Optional<Version> latestVersion = getVersion(latestVersionName);
-        if (!latestVersion.isPresent()) {
-            return GetNewVersionResponse.failure("Version Parse Failure (" + latestVersionName + ")");
-        }
+            Optional<Version> latestVersion = getVersion(latestVersionName);
+            if (!latestVersion.isPresent()) {
+                return GetNewVersionResponse.failure("Version Parse Failure (" + latestVersionName + ")");
+            }
 
-        return GetNewVersionResponse.success(
-                new GetNewVersionResult(
-                        checkIfModNeedsUpdating(currentVersion.get(), latestVersion.get()),
-                        latestVersion.get().toString()
-                )
-        );
+            return GetNewVersionResponse.success(
+                    new GetNewVersionResult(
+                            checkIfModNeedsUpdating(currentVersion.get(), latestVersion.get()),
+                            latestVersion.get().toString()
+                    )
+            );
+        });
     }
 
     private static boolean checkIfModNeedsUpdating(Version currentVersion, Version latestVersion) {
@@ -44,7 +47,7 @@ public class GetNewVersionHandler {
         // (Correct: 2.0.0, 2.0.0-beta.1)
 
         // This assumes the latest version to have no prerelease tag
-        // (Correct: v2.0.0; Incorrect: v2.0.0-beta.1)
+        // (Correct: 2.0.0; Incorrect: 2.0.0-beta.1)
 
         // Hence we assume no case where the latest version is a higher prerelease version
         // and which we do not want to remind users of.
@@ -53,12 +56,6 @@ public class GetNewVersionHandler {
     }
 
     private static Optional<Version> getVersion(String versionName) {
-        // For version names like "v2.0.0",
-        // remove "v" from the start of string
-        if (versionName.startsWith("v")) {
-            versionName = versionName.substring(1);
-        }
-
         return Version.tryParse(versionName);
     }
 

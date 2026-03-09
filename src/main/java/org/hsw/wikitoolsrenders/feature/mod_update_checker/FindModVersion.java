@@ -1,4 +1,4 @@
-package org.hsw.wikitoolsrenders.feature.remind_mod_update;
+package org.hsw.wikitoolsrenders.feature.mod_update_checker;
 
 import java.util.Optional;
 

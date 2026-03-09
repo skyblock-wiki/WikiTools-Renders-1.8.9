@@ -2,7 +2,7 @@ package org.hsw.wikitoolsrenders.feature.mod_update_checker;
 
 import net.minecraft.util.*;
 import net.minecraftforge.common.MinecraftForge;
-import org.hsw.wikitoolsrenders.WikiToolsRendersIdentity;
+import org.hsw.wikitoolsrenders.ModProperties;
 import net.minecraft.client.Minecraft;
 import net.minecraft.event.ClickEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
@@ -34,7 +34,7 @@ public class ModUpdateChecker {
     }
 
     private void handleModUpdateCheck() {
-        String currentVersionName = WikiToolsRendersIdentity.VERSION;
+        String currentVersionName = ModProperties.VERSION;
         getNewVersionHandler.getNewVersion(
                         new GetNewVersionHandler.GetNewVersionRequest(currentVersionName))
                 .thenAccept((response) -> {
@@ -55,7 +55,7 @@ public class ModUpdateChecker {
         IChatComponent frontComponent = new ChatComponentTranslation("wikitoolsrenders.message.mod_update_checker.new_update", newVersionName)
                 .setChatStyle(new ChatStyle().setColor(EnumChatFormatting.GREEN));
 
-        String latestReleaseDownloadUrl = WikiToolsRendersIdentity.LATEST_RELEASE_DOWNLOAD_URL;
+        String latestReleaseDownloadUrl = ModProperties.LATEST_RELEASE_DOWNLOAD_URL;
         ChatStyle linkStyle = new ChatStyle()
                 .setColor(EnumChatFormatting.GRAY)
                 .setUnderlined(true)
@@ -75,7 +75,7 @@ public class ModUpdateChecker {
 
     private static void warnFailure(String problemName) {
         String warningText = new ChatComponentTranslation("wikitoolsrenders.message.mod_update_checker.error", problemName).getUnformattedTextForChat();
-        WikiToolsRendersIdentity.LOGGER.warn(warningText, false);
+        ModProperties.LOGGER.warn(warningText, false);
     }
 
 }

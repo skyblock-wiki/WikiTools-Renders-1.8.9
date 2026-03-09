@@ -1,7 +1,7 @@
 package org.hsw.wikitoolsrenders.feature.render_entity.listener;
 
 import net.minecraftforge.common.MinecraftForge;
-import org.hsw.wikitoolsrenders.WikiToolsRendersKeybinds;
+import org.hsw.wikitoolsrenders.ModKeybinds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityOtherPlayerMP;
 import net.minecraft.client.resources.I18n;
@@ -30,7 +30,7 @@ public class CopyFacingEntityListener {
 
     @SubscribeEvent
     public void onKeyInputEvent(InputEvent.KeyInputEvent event) {
-        if (!WikiToolsRendersKeybinds.COPY_ENTITY.isKeyDown()) {
+        if (!ModKeybinds.COPY_ENTITY.isKeyDown()) {
             return;
         }
 

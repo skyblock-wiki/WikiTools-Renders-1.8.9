@@ -1,7 +1,7 @@
 package org.hsw.wikitoolsrenders.feature.render_entity.listener;
 
 import net.minecraftforge.common.MinecraftForge;
-import org.hsw.wikitoolsrenders.WikiToolsRendersKeybinds;
+import org.hsw.wikitoolsrenders.ModKeybinds;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -24,7 +24,7 @@ public class RenderEntityListener {
 
     @SubscribeEvent
     public void onKeyInputEvent(InputEvent.KeyInputEvent event) {
-        if (!WikiToolsRendersKeybinds.HUD.isKeyDown()) {
+        if (!ModKeybinds.HUD.isKeyDown()) {
             return;
         }
 

@@ -13,7 +13,7 @@ import net.minecraft.util.IChatComponent;
 import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import org.hsw.wikitoolsrenders.WikiToolsRendersKeybinds;
+import org.hsw.wikitoolsrenders.ModKeybinds;
 import org.hsw.wikitoolsrenders.feature.render_entity.render.EntityRenderer;
 import org.lwjgl.input.Keyboard;
 
@@ -31,7 +31,7 @@ public class AddItemToEntityListener {
 
     @SubscribeEvent
     public void copyEntityHandler(GuiScreenEvent.KeyboardInputEvent.Pre event) {
-        boolean mIsPressed = Keyboard.isKeyDown(WikiToolsRendersKeybinds.COPY_ENTITY.getKeyCode());
+        boolean mIsPressed = Keyboard.isKeyDown(ModKeybinds.COPY_ENTITY.getKeyCode());
         boolean mIsPressedWithShift = mIsPressed && Keyboard.isKeyDown(Keyboard.KEY_LSHIFT);
 
         if (mIsPressed && mIsPressedWithShift) {

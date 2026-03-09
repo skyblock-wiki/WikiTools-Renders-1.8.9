@@ -6,7 +6,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
-import org.hsw.wikitoolsrenders.WikiToolsRendersIdentity;
+import org.hsw.wikitoolsrenders.ModProperties;
 
 import java.io.IOException;
 
@@ -20,7 +20,7 @@ public class GithubLatestReleaseFinder implements FindModVersion {
 
     public FindModVersion.FindModVersionResult findLatestVersion() {
         try (CloseableHttpClient httpClient = HttpClientBuilder.create().build()) {
-            HttpGet request = new HttpGet(githubApiBaseUrl + WikiToolsRendersIdentity.LATEST_RELEASE_PATH);
+            HttpGet request = new HttpGet(githubApiBaseUrl + ModProperties.LATEST_RELEASE_PATH);
             request.addHeader("Accept", "application/vnd.github+json");
 
             HttpResponse result = httpClient.execute(request);

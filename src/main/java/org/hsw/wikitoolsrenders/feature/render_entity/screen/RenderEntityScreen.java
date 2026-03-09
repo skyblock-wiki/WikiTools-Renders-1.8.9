@@ -1,12 +1,12 @@
 package org.hsw.wikitoolsrenders.feature.render_entity.screen;
 
 import net.minecraft.client.renderer.GlStateManager;
-import org.hsw.wikitoolsrenders.WikiToolsRendersIdentity;
+import org.hsw.wikitoolsrenders.ModProperties;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.*;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
-import org.hsw.wikitoolsrenders.WikiToolsRendersKeybinds;
+import org.hsw.wikitoolsrenders.ModKeybinds;
 import org.hsw.wikitoolsrenders.feature.render_entity.render.EntityRenderer;
 import org.hsw.wikitoolsrenders.feature.render_entity.render.RenderableEntity;
 
@@ -22,14 +22,14 @@ public class RenderEntityScreen extends GuiScreen implements GuiPageButtonList.G
     private List<NormalSlider> normalSliders;
     private List<IconButton> iconButtons;
 
-    private final ResourceLocation uiComponentsImage = new ResourceLocation(WikiToolsRendersIdentity.MODID, "ui_components.png");
+    private final ResourceLocation uiComponentsImage = new ResourceLocation(ModProperties.MODID, "ui_components.png");
 
     @Override
     protected void keyTyped(char typedChar, int keyCode) throws IOException {
         super.keyTyped(typedChar, keyCode);
 
         // Handle exit GUI
-        if (WikiToolsRendersKeybinds.HUD.getKeyCode() == keyCode) {
+        if (ModKeybinds.HUD.getKeyCode() == keyCode) {
             this.mc.displayGuiScreen(null);
         }
     }
@@ -57,7 +57,7 @@ public class RenderEntityScreen extends GuiScreen implements GuiPageButtonList.G
         final int toggleSmallArmsButtonId = 4261;
         final int toggleInvisibleButtonId = 4262;
         final int removeEnchantsButtonId = 4263;
-        final int removeArmourButtonId = 4264;
+        final int removeArmorButtonId = 4264;
         final int removeHeldItemButtonId = 4265;
         final int headPitchSliderId = 4266;
         final int headYawSliderId = 4267;
@@ -88,12 +88,12 @@ public class RenderEntityScreen extends GuiScreen implements GuiPageButtonList.G
                         EntityRenderer::removeEnchantsInEntityInventory
                 ),
                 new NormalButton(
-                        new GuiButton(removeArmourButtonId,
+                        new GuiButton(removeArmorButtonId,
                                 anchorX - (width - offset - 14 - 10 - 256) / 2, anchorY - (height - offset - 14 - (10 + 40) * 3 - 54) / 2,
                                 100, 20,
                                 I18n.format("wikitoolsrenders.message.render_entity_gui.remove_armor")),
-                        EntityRenderer::canRemoveArmourPiecesOfEntity,
-                        EntityRenderer::removeArmourPiecesOfEntity
+                        EntityRenderer::canRemoveArmorPiecesOfEntity,
+                        EntityRenderer::removeArmorPiecesOfEntity
                 ),
                 new NormalButton(
                         new GuiButton(removeHeldItemButtonId,

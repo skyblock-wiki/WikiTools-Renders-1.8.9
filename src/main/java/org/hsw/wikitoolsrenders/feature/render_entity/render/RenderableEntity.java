@@ -200,14 +200,14 @@ public class RenderableEntity {
         entity.setCurrentItemOrArmor(0, null);
     }
 
-    public boolean hasArmourPieces() {
+    public boolean hasArmorPieces() {
         return entity.getCurrentArmor(ArmorPiece.HELMET.armorSlotIndex) != null ||
                 entity.getCurrentArmor(ArmorPiece.CHESTPLATE.armorSlotIndex) != null ||
                 entity.getCurrentArmor(ArmorPiece.LEGGINGS.armorSlotIndex) != null ||
                 entity.getCurrentArmor(ArmorPiece.BOOTS.armorSlotIndex) != null;
     }
 
-    public void removeArmourPieces() {
+    public void removeArmorPieces() {
         entity.setCurrentItemOrArmor(ArmorPiece.HELMET.equipmentSlotIndex, null);
         entity.setCurrentItemOrArmor(ArmorPiece.CHESTPLATE.equipmentSlotIndex, null);
         entity.setCurrentItemOrArmor(ArmorPiece.LEGGINGS.equipmentSlotIndex, null);

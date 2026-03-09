@@ -3,7 +3,7 @@ package org.hsw.wikitoolsrenders;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class WikiToolsRendersIdentity {
+public class ModProperties {
 
     public static final String MODID = "${GRADLE_MOD_ID}";
     public static final String VERSION = "${GRADLE_MOD_VERSION}";

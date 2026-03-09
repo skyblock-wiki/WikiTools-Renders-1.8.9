@@ -311,12 +311,12 @@ public class EntityRenderer {
         invalidateCurrentEntityScale();
     }
 
-    public static boolean canRemoveArmourPiecesOfEntity() {
-        return getCurrentEntity().hasArmourPieces();
+    public static boolean canRemoveArmorPiecesOfEntity() {
+        return getCurrentEntity().hasArmorPieces();
     }
 
-    public static void removeArmourPiecesOfEntity() {
-        getCurrentEntity().removeArmourPieces();
+    public static void removeArmorPiecesOfEntity() {
+        getCurrentEntity().removeArmorPieces();
         invalidateCurrentEntityScale();
     }
 

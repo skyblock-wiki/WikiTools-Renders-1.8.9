@@ -1,7 +1,7 @@
 package org.hsw.wikitoolsrenders.feature.render_entity.render;
 
 import com.google.common.io.Files;
-import org.hsw.wikitoolsrenders.WikiToolsRendersIdentity;
+import org.hsw.wikitoolsrenders.ModProperties;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
@@ -147,7 +147,7 @@ class FrameBufferHelper {
 
     public static void saveBuffer(BufferedImage bufferedImage) {
         try {
-            File f = new File(WikiToolsRendersIdentity.MODID + "/", new Date().getTime() + ".png");
+            File f = new File(ModProperties.MODID + "/", new Date().getTime() + ".png");
             Files.createParentDirs(f);
             f.createNewFile();
             ImageIO.write(bufferedImage, "png", f);

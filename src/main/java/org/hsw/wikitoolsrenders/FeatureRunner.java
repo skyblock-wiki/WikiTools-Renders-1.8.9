@@ -14,12 +14,12 @@ public class FeatureRunner {
     private final ModUpdateChecker modUpdateChecker = createModUpdateChecker();
 
     public FeatureRunner() {
-        WikiToolsRendersKeybinds.init();
+        ModKeybinds.init();
     }
 
     private static ModUpdateChecker createModUpdateChecker() {
         GithubLatestReleaseFinder githubLatestReleaseFinder = new GithubLatestReleaseFinder(
-                WikiToolsRendersIdentity.GITHUB_API_BASE_URL
+                ModProperties.GITHUB_API_BASE_URL
         );
         GetNewVersionHandler getNewVersionHandler = new GetNewVersionHandler(githubLatestReleaseFinder);
         return new ModUpdateChecker(getNewVersionHandler);

@@ -1,29 +1,30 @@
 wikitoolsrenders.keybind.category=WikiTools Renders
-wikitoolsrenders.keybind.copyEntity=Copy Entity
-wikitoolsrenders.keybind.hud=Open Render Entity GUI
+wikitoolsrenders.keybind.copy_entity=Copy Entity
+wikitoolsrenders.keybind.open_render_entity_gui=Open Render Entity GUI
 
-wikitoolsrenders.remindModUpdate.needsUpdating=WikiTools Renders has an update: %s.
-wikitoolsrenders.remindModUpdate.updateLinkText=Click here to see the new version.
+wikitoolsrenders.message.add_item_to_entity.success=Added item to entity
+wikitoolsrenders.message.add_item_to_entity.failure=Failed to add item to entity
+wikitoolsrenders.message.add_item_to_entity.destination_tip.held_item=Copies as held item by default.
+wikitoolsrenders.message.add_item_to_entity.destination_tip.armor_piece=Copies as armor piece with Shift+Key.
+wikitoolsrenders.message.add_item_to_entity.as_held_item=as held item
+wikitoolsrenders.message.add_item_to_entity.as_armor_piece=as armor piece
 
-wikitoolsrenders.renderEntityGui.header=WikiTools Renders
-wikitoolsrenders.renderEntityGui.toggleInvisible=Toggle Invisible
-wikitoolsrenders.renderEntityGui.removeEnchants=Remove Enchants
-wikitoolsrenders.renderEntityGui.removeArmour=Remove Armour
-wikitoolsrenders.renderEntityGui.removeItem=Remove Item
-wikitoolsrenders.renderEntityGui.headPitch=Head Pitch
-wikitoolsrenders.renderEntityGui.headYaw=Head Yaw
-wikitoolsrenders.renderEntityGui.toggleSmallArms=Toggle Small Arms
-wikitoolsrenders.renderEntityGui.setSteve=Set to Steve
-wikitoolsrenders.renderEntityGui.copySelf=Copy Self
-wikitoolsrenders.renderEntityGui.downloadSkin=Download Skin
-wikitoolsrenders.renderEntityGui.downloadHead=Download Head
-wikitoolsrenders.renderEntityGui.saveEntityImage=Save Entity Image
+wikitoolsrenders.message.copy_entity.success=Copied entity
 
-wikitoolsrenders.copyFacingEntity.success=Copied entity
+wikitoolsrenders.message.mod_update_checker.new_update=WikiTools has an update: %s.
+wikitoolsrenders.message.mod_update_checker.update_link_text=Click here to see the new version.
+wikitoolsrenders.message.mod_update_checker.error=WikiTools Mod Update Checker encountered an error: %s
 
-wikitoolsrenders.addItemToEntity.success=Added item to entity
-wikitoolsrenders.addItemToEntity.failure=Failed to add item to entity
-wikitoolsrenders.addItemToEntity.destinationTip.heldItem=Copies as held item by default.
-wikitoolsrenders.addItemToEntity.destinationTip.armorPiece=Copies as armor piece with Shift+Key.
-wikitoolsrenders.addItemToEntity.asHeldItem=as held item
-wikitoolsrenders.addItemToEntity.asArmorPiece=as armor piece
+wikitoolsrenders.message.render_entity_gui.screen_title=WikiTools Renders
+wikitoolsrenders.message.render_entity_gui.toggle_invisible=Toggle Invisible
+wikitoolsrenders.message.render_entity_gui.remove_enchants=Remove Enchants
+wikitoolsrenders.message.render_entity_gui.remove_armor=Remove Armor
+wikitoolsrenders.message.render_entity_gui.remove_item=Remove Item
+wikitoolsrenders.message.render_entity_gui.head_pitch=Head Pitch
+wikitoolsrenders.message.render_entity_gui.head_yaw=Head Yaw
+wikitoolsrenders.message.render_entity_gui.toggle_small_arms=Toggle Small Arms
+wikitoolsrenders.message.render_entity_gui.set_steve=Set to Steve
+wikitoolsrenders.message.render_entity_gui.copy_self=Copy Self
+wikitoolsrenders.message.render_entity_gui.download_skin=Download Skin
+wikitoolsrenders.message.render_entity_gui.download_head=Download Head
+wikitoolsrenders.message.render_entity_gui.save_entity_image=Save Entity Image

@@ -67,7 +67,7 @@ public class RenderEntityScreen extends GuiScreen implements GuiPageButtonList.G
                         new GuiButton(toggleSmallArmsButtonId,
                                 anchorX - (width - offset - 14 - 10 - 256) / 2, anchorY - (height - offset - 14 - 54) / 2,
                                 100, 20,
-                                I18n.format("wikitoolsrenders.renderEntityGui.toggleSmallArms")),
+                                I18n.format("wikitoolsrenders.message.render_entity_gui.toggle_small_arms")),
                         NormalButton.WHEN_ENTITY_IS_PLAYER,
                         EntityRenderer::toggleSmallArms
                 ),
@@ -75,7 +75,7 @@ public class RenderEntityScreen extends GuiScreen implements GuiPageButtonList.G
                         new GuiButton(toggleInvisibleButtonId,
                                 anchorX - (width - offset - 14 - 10 - 256) / 2, anchorY - (height - offset - 14 - 10 - 40 - 54) / 2,
                                 100, 20,
-                                I18n.format("wikitoolsrenders.renderEntityGui.toggleInvisible")),
+                                I18n.format("wikitoolsrenders.message.render_entity_gui.toggle_invisible")),
                         NormalButton.ALWAYS,
                         EntityRenderer::toggleEntityVisibility
                 ),
@@ -83,7 +83,7 @@ public class RenderEntityScreen extends GuiScreen implements GuiPageButtonList.G
                         new GuiButton(removeEnchantsButtonId,
                                 anchorX - (width - offset - 14 - 10 - 256) / 2, anchorY - (height - offset - 14 + -(10 + 40) * 2 - 54) / 2,
                                 100, 20,
-                                I18n.format("wikitoolsrenders.renderEntityGui.removeEnchants")),
+                                I18n.format("wikitoolsrenders.message.render_entity_gui.remove_enchants")),
                         EntityRenderer::canRemoveEnchantsInEntityInventory,
                         EntityRenderer::removeEnchantsInEntityInventory
                 ),
@@ -91,7 +91,7 @@ public class RenderEntityScreen extends GuiScreen implements GuiPageButtonList.G
                         new GuiButton(removeArmourButtonId,
                                 anchorX - (width - offset - 14 - 10 - 256) / 2, anchorY - (height - offset - 14 - (10 + 40) * 3 - 54) / 2,
                                 100, 20,
-                                I18n.format("wikitoolsrenders.renderEntityGui.removeArmour")),
+                                I18n.format("wikitoolsrenders.message.render_entity_gui.remove_armor")),
                         EntityRenderer::canRemoveArmourPiecesOfEntity,
                         EntityRenderer::removeArmourPiecesOfEntity
                 ),
@@ -99,7 +99,7 @@ public class RenderEntityScreen extends GuiScreen implements GuiPageButtonList.G
                         new GuiButton(removeHeldItemButtonId,
                                 anchorX - (width - offset - 14 - 10 - 256) / 2, anchorY - (height - offset - 14 - (10 + 40) * 4 - 54) / 2,
                                 100, 20,
-                                I18n.format("wikitoolsrenders.renderEntityGui.removeItem")),
+                                I18n.format("wikitoolsrenders.message.render_entity_gui.remove_item")),
                         EntityRenderer::canRemoveHeldItemOfEntity,
                         EntityRenderer::removeHeldItemOfEntity
                 )
@@ -112,7 +112,7 @@ public class RenderEntityScreen extends GuiScreen implements GuiPageButtonList.G
                         -90.0f, 90.0f,
                         new GuiSlider(this, headPitchSliderId,
                                 anchorX - (width - offset - 14 - 10 - 256) / 2, anchorY - (height - offset - 14 - (10 + 40) * 5 - 54) / 2,
-                                I18n.format("wikitoolsrenders.renderEntityGui.headPitch"), -90.0f, 90.0f, controlState.headPitch, this),
+                                I18n.format("wikitoolsrenders.message.render_entity_gui.head_pitch"), -90.0f, 90.0f, controlState.headPitch, this),
                         NormalSlider.WHEN_ENTITY_IS_PLAYER,
                         EntityRenderer::setHeadPitch
                 ),
@@ -120,7 +120,7 @@ public class RenderEntityScreen extends GuiScreen implements GuiPageButtonList.G
                         -90.0f, 90.0f,
                         new GuiSlider(this, headYawSliderId,
                                 anchorX - (width - offset - 14 - 10 - 256) / 2, anchorY - (height - offset - 14 - (10 + 40) * 6 - 54) / 2,
-                                I18n.format("wikitoolsrenders.renderEntityGui.headYaw"), -90.0f, 90.0f, controlState.headYaw, this),
+                                I18n.format("wikitoolsrenders.message.render_entity_gui.head_yaw"), -90.0f, 90.0f, controlState.headYaw, this),
                         NormalSlider.WHEN_ENTITY_IS_PLAYER,
                         EntityRenderer::setHeadYaw
                 )
@@ -128,28 +128,28 @@ public class RenderEntityScreen extends GuiScreen implements GuiPageButtonList.G
 
         this.iconButtons = new ArrayList<>(Arrays.asList(
                 new IconButton(
-                        I18n.format("wikitoolsrenders.renderEntityGui.saveEntityImage"),
+                        I18n.format("wikitoolsrenders.message.render_entity_gui.save_entity_image"),
                         new IconButton.IconButtonConfig(anchorX + (width - offset - 32 - 14) / 2, anchorY - (height - offset - 14) / 2, 0, 0, 16, 16),
                         this::drawIconButton,
                         IconButton.ALWAYS,
                         EntityRenderer::saveEntityImage
                 ),
                 new IconButton(
-                        I18n.format("wikitoolsrenders.renderEntityGui.downloadSkin"),
+                        I18n.format("wikitoolsrenders.message.render_entity_gui.download_skin"),
                         new IconButton.IconButtonConfig(anchorX + (width - offset - 32 * 2 - 4 - 14) / 2, anchorY - (height - offset - 14) / 2, 16, 0, 16, 16),
                         this::drawIconButton,
                         IconButton.WHEN_ENTITY_IS_PLAYER,
                         EntityRenderer::downloadSkin
                 ),
                 new IconButton(
-                        I18n.format("wikitoolsrenders.renderEntityGui.downloadHead"),
+                        I18n.format("wikitoolsrenders.message.render_entity_gui.download_head"),
                         new IconButton.IconButtonConfig(anchorX + (width - offset - 32 * 3 - 4 * 2 - 14) / 2, anchorY - (height - offset - 14) / 2, 16 * 2, 0, 16, 16),
                         this::drawIconButton,
                         IconButton.WHEN_ENTITY_IS_PLAYER,
                         EntityRenderer::downloadHead
                 ),
                 new IconButton(
-                        I18n.format("wikitoolsrenders.renderEntityGui.copySelf"),
+                        I18n.format("wikitoolsrenders.message.render_entity_gui.copy_self"),
                         new IconButton.IconButtonConfig(anchorX + (width - offset - 32 * 4 - 4 * 3 - 14) / 2, anchorY - (height - offset - 14) / 2, 16 * 3, 0, 16, 16),
                         this::drawIconButton,
                         IconButton.ALWAYS,
@@ -159,7 +159,7 @@ public class RenderEntityScreen extends GuiScreen implements GuiPageButtonList.G
                         }
                 ),
                 new IconButton(
-                        I18n.format("wikitoolsrenders.renderEntityGui.setSteve"),
+                        I18n.format("wikitoolsrenders.message.render_entity_gui.set_steve"),
                         new IconButton.IconButtonConfig(anchorX + (width - offset - 32 * 5 - 4 * 4 - 14) / 2, anchorY - (height - offset - 14) / 2, 16 * 4, 0, 16, 16),
                         this::drawIconButton,
                         IconButton.ALWAYS,
@@ -265,7 +265,7 @@ public class RenderEntityScreen extends GuiScreen implements GuiPageButtonList.G
         // Draw Nameplate
         drawRect(anchorX - (width - offset - 14) / 2, anchorY - (height - offset - 14) / 2,
                 anchorX - (width - offset - 14 - 262) / 2, anchorY - (height - offset - 14 - 30) / 2, 0xFF6D6D6D);
-        drawCenteredString(mc.fontRendererObj, I18n.format("wikitoolsrenders.renderEntityGui.header"), anchorX - (width - offset - 14 - 131) / 2, anchorY - (height - offset - 14 - 8) / 2, 0xFFE0E0E0);
+        drawCenteredString(mc.fontRendererObj, I18n.format("wikitoolsrenders.message.render_entity_gui.screen_title"), anchorX - (width - offset - 14 - 131) / 2, anchorY - (height - offset - 14 - 8) / 2, 0xFFE0E0E0);
     }
 
     private void drawIconButtonDescription(int anchorX, int anchorY, int width, int height, int offset, int mouseX, int mouseY) {

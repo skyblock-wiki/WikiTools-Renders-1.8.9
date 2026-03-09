@@ -52,7 +52,7 @@ public class ModUpdateChecker {
     private static void remindUserToUpdateMod(String newVersionName) {
         Minecraft client = Minecraft.getMinecraft();
 
-        IChatComponent frontComponent = new ChatComponentTranslation("wikitools.message.mod_update_checker.new_update", newVersionName)
+        IChatComponent frontComponent = new ChatComponentTranslation("wikitoolsrenders.message.mod_update_checker.new_update", newVersionName)
                 .setChatStyle(new ChatStyle().setColor(EnumChatFormatting.GREEN));
 
         String latestReleaseDownloadUrl = WikiToolsRendersIdentity.LATEST_RELEASE_DOWNLOAD_URL;
@@ -62,7 +62,7 @@ public class ModUpdateChecker {
                 .setChatClickEvent(
                         new ClickEvent(ClickEvent.Action.OPEN_URL, latestReleaseDownloadUrl));
 
-        IChatComponent linkComponent = new ChatComponentTranslation("wikitools.message.mod_update_checker.update_link_text")
+        IChatComponent linkComponent = new ChatComponentTranslation("wikitoolsrenders.message.mod_update_checker.update_link_text")
                 .setChatStyle(linkStyle);
 
         IChatComponent messageComponent = new ChatComponentText("")
@@ -74,7 +74,7 @@ public class ModUpdateChecker {
     }
 
     private static void warnFailure(String problemName) {
-        String warningText = new ChatComponentTranslation("wikitools.message.mod_update_checker.error", problemName).getUnformattedTextForChat();
+        String warningText = new ChatComponentTranslation("wikitoolsrenders.message.mod_update_checker.error", problemName).getUnformattedTextForChat();
         WikiToolsRendersIdentity.LOGGER.warn(warningText, false);
     }
 

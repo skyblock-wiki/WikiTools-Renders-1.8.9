@@ -65,14 +65,14 @@ public class AddItemToEntityListener {
 
         EntityRenderer.setEntityHeldItem(itemStack.get());
 
-        String tipInfo = I18n.format("wikitoolsrenders.addItemToEntity.destinationTip.heldItem") + "\n" +
-                I18n.format("wikitoolsrenders.addItemToEntity.destinationTip.armorPiece");
+        String tipInfo = I18n.format("wikitoolsrenders.message.add_item_to_entity.destination_tip.held_item") + "\n" +
+                I18n.format("wikitoolsrenders.message.add_item_to_entity.destination_tip.armor_piece");
         IChatComponent destinationTip = new ChatComponentText("(◕‿◕)").setChatStyle(
                 new ChatStyle().setChatHoverEvent(
                         new HoverEvent(HoverEvent.Action.SHOW_TEXT,
                                 new ChatComponentText(tipInfo))));
-        IChatComponent outputText = new ChatComponentText(I18n.format("wikitoolsrenders.addItemToEntity.success")).appendText("\n")
-                .appendText("└ ").appendText(I18n.format("wikitoolsrenders.addItemToEntity.asHeldItem")).appendText(" ").appendSibling(destinationTip);
+        IChatComponent outputText = new ChatComponentText(I18n.format("wikitoolsrenders.message.add_item_to_entity.success")).appendText("\n")
+                .appendText("└ ").appendText(I18n.format("wikitoolsrenders.message.add_item_to_entity.as_held_item")).appendText(" ").appendSibling(destinationTip);
         Minecraft.getMinecraft().ingameGUI.getChatGUI().printChatMessage(outputText);
     }
 
@@ -85,15 +85,15 @@ public class AddItemToEntityListener {
 
         boolean success = EntityRenderer.setEntityArmorPiece(itemStack.get());
 
-        String tipInfo = I18n.format("wikitoolsrenders.addItemToEntity.destinationTip.heldItem") + "\n" +
-                I18n.format("wikitoolsrenders.addItemToEntity.destinationTip.armorPiece");
+        String tipInfo = I18n.format("wikitoolsrenders.message.add_item_to_entity.destination_tip.held_item") + "\n" +
+                I18n.format("wikitoolsrenders.message.add_item_to_entity.destination_tip.armor_piece");
         IChatComponent destinationTip = new ChatComponentText("(◕‿◕)").setChatStyle(
                 new ChatStyle().setChatHoverEvent(
                         new HoverEvent(HoverEvent.Action.SHOW_TEXT,
                                 new ChatComponentText(tipInfo))));
-        String message = success ? I18n.format("wikitoolsrenders.addItemToEntity.success") : I18n.format("wikitoolsrenders.addItemToEntity.failure");
+        String message = success ? I18n.format("wikitoolsrenders.message.add_item_to_entity.success") : I18n.format("wikitoolsrenders.message.add_item_to_entity.failure");
         IChatComponent outputText = new ChatComponentText(message).appendText("\n")
-                .appendText("└ ").appendText(I18n.format("wikitoolsrenders.addItemToEntity.asArmorPiece")).appendText(" ").appendSibling(destinationTip);
+                .appendText("└ ").appendText(I18n.format("wikitoolsrenders.message.add_item_to_entity.as_armor_piece")).appendText(" ").appendSibling(destinationTip);
         if (!success) {
             outputText.setChatStyle(new ChatStyle().setColor(EnumChatFormatting.RED));
         }

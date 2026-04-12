@@ -4,7 +4,7 @@
 
 - Minecraft 1.8.9
 - Minecraft Forge 1.8.9 - 11.15.1.2318
-- Mods: WikiTools Renders 2.6.7
+- Mods: WikiTools Renders 2.7.0
 
 For rendering features to work properly, please use a large enough window size (preferably full screen on a modern monitor) during the tests.
 

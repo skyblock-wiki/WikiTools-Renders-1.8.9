@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-The original WikiTools mod is split into WikiTools and WikiTools Renders. This mod is renamed as WikiTools Renders. The non-rendering parts of the last version are removed from this mod. Various issues were fixed.
+## [2.7.0] - 2026-04-16
+
+The original WikiTools mod is split into WikiTools and WikiTools Renders. This mod is renamed as WikiTools Renders. The non-rendering parts of the last version are removed from this mod. The mod is restructured. Various issues are fixed.
 
 ### Added
 
@@ -31,6 +33,7 @@ The original WikiTools mod is split into WikiTools and WikiTools Renders. This m
 - Removed View SkyBlock ID
 - Removed Copy Skull ID
 - Removed Copy Wiki UI
+- Removed Self Modifier keybind
 
 ### Fixed
 
@@ -84,7 +87,7 @@ If you want to translate the mod into a language you speak, create a pull reques
 ### Fixed
 
 - Fixed Fake Player Skin Detection
-- Fixed Set To Steve
+- Fixed Set Skin To Steve
 
 ## [2.6.1] - 2021-08-13
 
@@ -100,15 +103,15 @@ If you want to translate the mod into a language you speak, create a pull reques
 
 ### Added
 
-- Added the ability to add things to the Copied Entity by pressing the Copy Entity key when hovering over items Armours will automatically be placed onto it, and holding shift will place blocks on its head.
+- Added the ability to add things to the Copied Entity by pressing the Copy Entity key when hovering over items Armors will automatically be placed onto it, and holding shift will place blocks on its head.
 
 ### Changed
 
-- Re-enabled Remove Item in Render Entity GUI
+- Re-enabled Remove Held Item in Render Entity GUI
 
 ### Fixed
 
-- Fixed Remove Armour not removing all armour pieces in Render Entity GUI
+- Fixed Remove Armor not removing all armor pieces in Render Entity GUI
 
 ## [2.5] - 2021-06-13
 
@@ -155,7 +158,7 @@ If you want to translate the mod into a language you speak, create a pull reques
 
 ### Changed
 
-- Remove Item has been disabled in Render Entity GUI as the built mod behaves differently than in editor, and the method doesn't work in both
+- Remove Held Item has been disabled in Render Entity GUI as the built mod behaves differently than in editor, and the method doesn't work in both
 
 ## [2.0] - 2021-05-11
 
@@ -165,9 +168,9 @@ This release contains the basic features of WikiTools accessible through the new
 
 - Added Open Render Entity GUI (Key K): Opens the Render Entity GUI
 - Added Render Entity GUI
-- Added buttons in Render Entity GUI: Set to Steve, Toggle Invisible, Remove Enchants, Remove Armour, and Remove Held Item
+- Added buttons in Render Entity GUI: Set Skin To Steve, Toggle Invisible, Remove Enchants, Remove Armor, and Remove Held Item
 - Added top-right buttons of the Render Entity GUI: Copy Self, Render Skin, and Render Entity
-- Added Copy Entity (Key M): Copies the entity you are looking at to the Render Entity GUI. Armours and held items will automatically go onto the entity.
+- Added Copy Entity (Key M): Copies the entity you are looking at to the Render Entity GUI. Armors and held items will automatically go onto the entity.
 
 ### Changed
 
@@ -197,6 +200,7 @@ This release contains the basic features of WikiTools accessible through the new
       - Note: This is like an invisibility potion, it will still render armor.
 - Added Copy NBT (Key: N): Copy the associated NBT of the entity you are looking at or the item you are hovering over to your clipboard.
 
+[2.7.0]: https://github.com/skyblock-wiki/wikitools-renders-1.8.9/compare/437102e...v2.7.0
 [2.6.6]: https://github.com/Charzard4261/wikitools/compare/v2.6.5...v2.6.6
 [2.6.5]: https://github.com/Charzard4261/wikitools/compare/v2.6.4...v2.6.5
 [2.6.4]: https://github.com/Charzard4261/wikitools/compare/v2.6.3...v2.6.4

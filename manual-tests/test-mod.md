@@ -1,28 +1,31 @@
-# Manual Tests (Render Entity)
+# Manual Tests (Mod)
 
 ## Environment
 
 - Minecraft 1.8.9
 - Minecraft Forge 1.8.9 - 11.15.1.2318
 - Mods: WikiTools Renders 2.7.0
+- Internet connection
 
 For rendering features to work properly, please use a large enough window size (preferably full screen on a modern monitor) during the tests.
 
-## Tests
+## Instruction
 
-Tester should set the following fields before or after performing tests. Tester should time their test session, which should include the time to launch Minecraft with the test environment.
+Tester should set the following fields before or after performing tests. Tester should time their test session, which should include the time to prepare the test environment.
 
 - Tester: Not set
 - Test date: Not set
 - Time taken: Not set
 
-Tester should perform each test and write the test result in the `Result` field. The test result should be "OK" if the `Action` is accurate and the output exactly matches `Expected Output`. Otherwise, write down the problem.
+Tester should perform each test and write the test result in the `Result` field. The test result should be "OK" if the `Action` is accurate and the output exactly matches `Expected Output`. Otherwise, put "FAIL:" and write down the problem.
+
+## Test Cases
 
 ### Render Entity GUI
 
 #### Render Entity GUI can be opened by pressing K
 
-- Action: Go to a SkyBlock lobby. Press K.
+- Action: Go to a creative mode world. Press K.
 - Expected Output: The Render Entity GUI opens.
 - Result: Not set
 
@@ -30,7 +33,7 @@ Tester should perform each test and write the test result in the `Result` field.
 
 #### Fake players can be copied by pressing M
 
-- Action: Go to a SkyBlock lobby. Head to 2 70 -74. Press M to copy the Security Sloth NPC.
+- Action: Join Hypixel SkyBlock and go to the SkyBlock hub. Head to 2 70 -74. Press M to copy the Security Sloth NPC.
 - Expected Output: Press K to open the GUI. The NPC is rendered within the display box on the left.
 - Result: Not set
 
@@ -103,7 +106,7 @@ Tester should perform each test and write the test result in the `Result` field.
 
 #### Can download skin of player entity
 
-- Action: Go to a SkyBlock lobby. Head to 2 70 -74. Press M to copy the Security Sloth NPC. Click the Download Skin icon.
+- Action: Join Hypixel SkyBlock and go to the SkyBlock hub. Head to 2 70 -74. Press M to copy the Security Sloth NPC. Click the Download Skin icon.
 - Expected Output: Exit the GUI. Press T to open chat messages. Click on the screenshot name.
   - The save location should be opened.
   - The last image saved should be a skin file of the NPC.
@@ -112,7 +115,7 @@ Tester should perform each test and write the test result in the `Result` field.
 
 #### Can download head of player entity
 
-- Action: Go to a SkyBlock lobby. Head to 2 70 -74. Press M to copy the Security Sloth NPC. Click the Download Head icon.
+- Action: Join Hypixel SkyBlock and go to the SkyBlock hub. Head to 2 70 -74. Press M to copy the Security Sloth NPC. Click the Download Head icon.
 - Expected Output: Exit the GUI. Press T to open chat messages. Click on the screenshot name.
   - The save location should be opened.
   - The last image saved should be a head sprite of the player. The hat overlay, in this case the sunglasses of the NPC, should appear on top of the head layer.
@@ -178,8 +181,8 @@ Tester should perform each test and write the test result in the `Result` field.
 
 ### Any Other Tests (Optional)
 
-Testers can test the mod with whatever conditions they want and write any problem they found below this line.
+Testers can test the mod with whatever conditions they want and write any problem they found here.
 
 ### Comments and Suggestions (Optional)
 
-Testers can provide their comments and suggestions about the mod and/or the manual tests below this line. Testers can report any ambiguity in the test document or suggest for new tests here.
+Testers can provide their comments and suggestions about the mod and/or the manual tests here. They can also report any ambiguity in the test document or suggest new tests here.

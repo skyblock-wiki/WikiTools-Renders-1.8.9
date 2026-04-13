@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.7.0] - 2026-04-16
+## [2.7.0] - 2026-04-17
 
 The original WikiTools mod is split into WikiTools and WikiTools Renders. This mod is renamed as WikiTools Renders. The non-rendering parts of the last version are removed from this mod. The mod is restructured. Various issues are fixed.
 

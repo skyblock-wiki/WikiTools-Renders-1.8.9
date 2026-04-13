@@ -10,7 +10,7 @@
     "authorList": [
       "Hypixel SkyBlock Wiki"
     ],
-    "credits": "https://github.com/skyblock-wiki/wikitools-renders-1.8.9/graphs/contributors (current)\n https://github.com/charzard4261/wikitools/graphs/contributors (<=2.6.6)\n https://github.com/mikuhl-dev/wikitools/graphs/contributors (<=1.0.0)",
+    "credits": "https://github.com/skyblock-wiki/wikitools-renders-1.8.9/graphs/contributors (<=2.7.0)\n https://github.com/charzard4261/wikitools/graphs/contributors (<=2.6.6)\n https://github.com/mikuhl-dev/wikitools/graphs/contributors (<=1.0.0)",
     "logoFile": "assets/wikitoolsrenders/icon.png",
     "screenshots": [],
     "dependencies": []

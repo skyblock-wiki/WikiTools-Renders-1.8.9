@@ -22,7 +22,7 @@ public class RenderEntityScreen extends GuiScreen implements GuiPageButtonList.G
     private List<NormalSlider> normalSliders;
     private List<IconButton> iconButtons;
 
-    private final ResourceLocation uiComponentsImage = new ResourceLocation(ModProperties.MODID, "ui_components.png");
+    private final ResourceLocation uiComponentsImage = new ResourceLocation(ModProperties.MOD_ID, "ui_components.png");
 
     @Override
     protected void keyTyped(char typedChar, int keyCode) throws IOException {

@@ -34,7 +34,7 @@ public class ModUpdateChecker {
     }
 
     private void handleModUpdateCheck() {
-        String currentVersionName = ModProperties.VERSION;
+        String currentVersionName = ModProperties.MOD_VERSION;
         getNewVersionHandler.getNewVersion(
                         new GetNewVersionHandler.GetNewVersionRequest(currentVersionName))
                 .thenAccept((response) -> {

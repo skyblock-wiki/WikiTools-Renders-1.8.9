@@ -6,6 +6,7 @@ plugins {
     id("gg.essential.loom") version "0.10.0.+"
     id("dev.architectury.architectury-pack200") version "0.1.3"
     id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("net.kyori.blossom") version "1.3.1"
 }
 
 // Constants:
@@ -60,6 +61,13 @@ loom {
 
 sourceSets.main {
     output.setResourcesDir(sourceSets.main.flatMap { it.java.classesDirectory })
+}
+
+// Blossom:
+
+blossom {
+    replaceToken("@MOD_ID@", modid)
+    replaceToken("@MOD_VERSION@", version)
 }
 
 // Dependencies:

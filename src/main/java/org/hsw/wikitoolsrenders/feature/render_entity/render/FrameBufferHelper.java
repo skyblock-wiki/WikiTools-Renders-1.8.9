@@ -147,7 +147,7 @@ class FrameBufferHelper {
 
     public static void saveBuffer(BufferedImage bufferedImage) {
         try {
-            File f = new File(ModProperties.MODID + "/", new Date().getTime() + ".png");
+            File f = new File(ModProperties.MOD_ID + "/", new Date().getTime() + ".png");
             Files.createParentDirs(f);
             f.createNewFile();
             ImageIO.write(bufferedImage, "png", f);

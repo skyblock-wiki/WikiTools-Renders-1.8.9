@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ModUpdateChecker {
 
     private final GetNewVersionHandler getNewVersionHandler;
+    private boolean ranOnceAfterClientLaunch = false;
 
     public ModUpdateChecker(GetNewVersionHandler getNewVersionHandler) {
         this.getNewVersionHandler = getNewVersionHandler;
@@ -25,8 +26,9 @@ public class ModUpdateChecker {
     @SubscribeEvent
     public void onEntityJoinWorld(EntityJoinWorldEvent event) {
         boolean isSelfJoin = event.entity == Minecraft.getMinecraft().thePlayer;
+        boolean isSinglePlayer = Minecraft.getMinecraft().isSingleplayer();
 
-        if (!isSelfJoin) {
+        if (!isSelfJoin || isSinglePlayer) {
             return;
         }
 
@@ -34,6 +36,11 @@ public class ModUpdateChecker {
     }
 
     private void handleModUpdateCheck() {
+        if (ranOnceAfterClientLaunch) {
+            return;
+        }
+        ranOnceAfterClientLaunch = true;
+
         String currentVersionName = ModProperties.MOD_VERSION;
         getNewVersionHandler.getNewVersion(
                         new GetNewVersionHandler.GetNewVersionRequest(currentVersionName))
@@ -50,8 +57,6 @@ public class ModUpdateChecker {
     }
 
     private static void remindUserToUpdateMod(String newVersionName) {
-        Minecraft client = Minecraft.getMinecraft();
-
         IChatComponent frontComponent = new ChatComponentTranslation("wikitoolsrenders.message.mod_update_checker.new_update", newVersionName)
                 .setChatStyle(new ChatStyle().setColor(EnumChatFormatting.GREEN));
 
@@ -70,7 +75,12 @@ public class ModUpdateChecker {
                 .appendText(" ")
                 .appendSibling(linkComponent);
 
-        client.ingameGUI.getChatGUI().printChatMessage(messageComponent);
+        printMessageInMainThread(messageComponent);
+    }
+
+    private static void printMessageInMainThread(IChatComponent message) {
+        Minecraft client = Minecraft.getMinecraft();
+        client.addScheduledTask(() -> client.ingameGUI.getChatGUI().printChatMessage(message));
     }
 
     private static void warnFailure(String problemName) {
